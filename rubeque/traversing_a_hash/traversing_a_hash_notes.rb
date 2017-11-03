@@ -2,19 +2,26 @@ class Hash
     def r_empty?
         #STEP 1: 'VALUES RETURNS ARRAY OF VALUES FROM HASH
 
-        puts a = values
+
         #=>  these are non-nil printed values  #=> these are all arrays
                                 # for b {:version=>{:one=>{"nine"=>""}, "two"=>"=^.^="}}
 
                                 # for c {:dogs=>{:my=>{"niko"=>""}, "ollie"=>""}}
                                 # for d: two
         #Step 2: 'IF VALUE IS A HASH, CHECK THE VALUES OF THAT SUB-HASH'
+        #create recursion method
+        
+        !values.any? do |val|
+            val.is_a?(Hash) ? !val.r_empty? : (val!=nil && val!="")
+            
+        end
+        
         a.each{|val| 
             if (val.class == Hash)
                 val.values.each{|val|
                     
-                    puts val
-                    puts val.class
+                    puts val # CASE B: {:one=>{"nine"=>""}, "two"=>"=^.^="} CASE C {:dogs=>{:my=>{"niko"=>""}, "ollie"=>""}}
+                    puts val.class #Hash
                 }
                 
             end
