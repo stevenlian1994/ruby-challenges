@@ -1,19 +1,43 @@
 def shortest_path(graph, origin, destination)
-    ___
+    graph.each{|k,v| 
+        # puts "#{k} is #{v}"
+        if v.class == Hash && 
+            
+            
+    }
+    
+    
+    
+    
 end
 
 graph = {
-    "San Francisco" => {"Chicago" => 2132,
-                        "Dallas" => 1734},
+    # "San Francisco" => {"Chicago" => 2132,
+    #                     "Dallas" => 1734},
     "Chicago" => {"Durham" => 781},
     "Dallas" => {"Durham" => 1176}
 }
 
+
+shortest_path(graph, "San Francisco", "Durham")
+
+
+#Analyzing graph: 1st hash(graph) has 3 k:v pairs
+# San Francisco is {"Chicago"=>2132, "Dallas"=>1734}
+# Chicago is {"Durham"=>781}
+# Dallas is {"Durham"=>1176}
+
+
+
+
+
+
+
+
+
 # Analyzing graph 1.0
 # graph = {
-#     "San Francisco" => {"Chicago" => 2132, "Dallas" => 1734}, 
-#                         "Chicago" => {"Durham" => 781}, 
-#                         "Dallas" => {"Durham" => 1176}
+#     "San Francisco" => {"Chicago" => 2132, "Dallas" => 1734}, "Chicago" => {"Durham" => 781}, "Dallas" => {"Durham" => 1176}
 # }
 
 # Analyzing graph 2.0
