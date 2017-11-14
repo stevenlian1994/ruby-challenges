@@ -16,25 +16,25 @@ end
 
 #OTHER INTERESTING SUBMISSIONS BY OTHER DEVS
 
-# def happy_number?(n)
-#   cache = []
-#   x = n
-
-#   until cache.include?(x) or x == 1
-#     cache << x
-#     digits = x.to_s.chars.map(&:to_i)
-#     x = digits.inject(0){|sum, digit| sum + digit**2}
-#   end
-
-#   x == 1
-# end
-
 def happy_number?(n)
-  past = []
-  20.times do
-    n = n.to_s.split('').map(&:to_i).map { |e| e * e}.reduce(:+)
-    return false if past.index(n)
-    return true if n == 1
-    past << n
+  cache = []
+  x = n
+
+  until cache.include?(x) or x == 1
+    cache << x
+    digits = x.to_s.chars.map(&:to_i)
+    x = digits.inject(0){|sum, digit| sum + digit**2}
   end
+
+  x == 1
 end
+
+# def happy_number?(n)
+#   past = []
+#   20.times do
+#     n = n.to_s.split('').map(&:to_i).map { |e| e * e}.reduce(:+)
+#     return false if past.index(n)
+#     return true if n == 1
+#     past << n
+#   end
+# end

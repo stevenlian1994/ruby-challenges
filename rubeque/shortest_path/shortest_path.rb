@@ -13,7 +13,7 @@ def shortest_path(graph, origin, destination)
     # n << ["San Francisco", 0, 9999, 9999, 9999]
     # n << []
     
-    
+    #Djikstra's algorithm 
      n = [
         ["", "San Francisco", "Chicago", "Dallas", "Durham"],
         ["San Francisco", 0, 9999, 9999, 9999],
@@ -21,6 +21,14 @@ def shortest_path(graph, origin, destination)
         ["Chicago", 0, 2132, 1734, 2910],
         ["Durham", 0, 2132, 1734, 2910]
         ]
+        
+    n = [
+
+SF  [ 0, 9999, 9999, 9999],
+DAL [ 0, 2132, 1734, 9999],
+CHI [ 0, 2132, 1734, 2910],
+DUR [ 0, 2132, 1734, 2910]   
+    ]
         
     path=[]
     dest=n[4][4]
