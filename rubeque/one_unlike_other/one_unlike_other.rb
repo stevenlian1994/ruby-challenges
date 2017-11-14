@@ -28,23 +28,26 @@ puts nonmatching([true, false, nil, (1==1)])
 # METHOD OVERRIDING allows a subclass to provide a specific implementation of a method that is already provided by one of its superclasses.
 
 class Bird  
-  def preen  
-    puts "I am cleaning my feathers."  
-  end  
-  def fly  
+  def fly(a)  
     puts "I am flying."  
   end  
 end  
   
 class Penguin < Bird  
-  def fly  
-    puts "Sorry. I'd rather swim."  
+  def fly(a) 
+    if a>0 
+      puts "Sorry. I'd rather swim."  
+    else
+      super(a)
+    end
   end  
 end  
   
 p = Penguin.new  
-p.preen  #=> I am cleaning my feathers. Penguins inherited preen method normally, 
-p.fly  #=> Sorry I'd rather swim.  Fly method overriden
+
+p.fly(4)#=> Sorry I'd rather swim.  Fly method overriden
+p.fly(-2)#=>"I am flying."
+
 
 #PENGUIN IS SUB-CLASS OF BIRD
 #TRUECLASS IS SUB-CLASS OF OBJECT
